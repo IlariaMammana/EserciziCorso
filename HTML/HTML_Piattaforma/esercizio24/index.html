@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esercizio 22</title>
+    <title>Esercizio 24</title>
 </head>
 <body>
-    <h1>Esercizio 22</h1><br />
-    <form action="" method="get">
+    <h1>Esercizio 24</h1><br />
+    <form action="/pagina_action_a_caso.php" method="get">
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" placeholder="Inserisci il tuo nome"><br />
+        <input type="text" name="nome" id="nome" placeholder="Inserisci il tuo nome" required><br />
         <label for="cognome">Cognome</label>
-        <input type="text" name="cognome" id="cognome" placeholder="Inserisci il tuo cognome"><br />
+        <input type="text" name="cognome" id="cognome" placeholder="Inserisci il tuo cognome" required><br />
         <label for="descrizione">Descriviti</label><br />
         <textarea name="testo" rows="5" cols="40">
             scrivi qui la tua descrizione
@@ -19,7 +19,7 @@
         <label for="genere">Genere</label><br />
         Femmina <input type="radio" name="genere" value="femmina" /><br>
         Maschio <input type="radio" name="genere" value="maschio" /><br />
-        <a href="">Privacy & Policy</a> <input name="Privacy & Policy" type="checkbox" value="Privacy & Policy" /><br />
+        <a href="">Privacy & Policy</a> <input name="Privacy & Policy" type="checkbox" value="Privacy & Policy" required /><br />
         <input type="submit" value="submit">
     </form>
 </body>

@@ -1,3 +1,6 @@
+* {
+    font-weight: bolder;
+}
 p {
     color: brown;
     text-align: right;
@@ -31,4 +34,12 @@ h5{
 }
 .c4{
     background-color: rgb(192, 179, 165);
+}
+h2, h4 {
+    font-family: 'Times New Roman', Times, serif;
+    color: deeppink;
+    background-color: moccasin;
+}
+a:hover{
+    color: greenyellow;
 }

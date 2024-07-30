@@ -43,3 +43,35 @@ h2, h4 {
 a:hover{
     color: greenyellow;
 }
+#p3{
+    color: chartreuse;
+}
+.c5{
+    color: cornflowerblue;
+}
+.lastsection_container{
+    color: blue;
+    text-align: center;
+    h2{
+        color: blue;
+    }
+    p{
+        color: blue;
+        text-align: center;
+    }
+}
+.ul1 li:last-child{
+    background-color: aqua;
+}
+.p-rgb{
+    color: rgb(255, 0, 0);
+}
+.p-hex{
+    color:#ff0000;
+}
+.p-rgba{
+    color: rgba(255, 0, 0, 0.7);
+}
+.p-colorname{
+    color: red;
+}

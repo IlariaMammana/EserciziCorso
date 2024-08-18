@@ -1,0 +1,28 @@
+.container{
+    width: 800px;
+    height: 800px;
+}
+.container__div-perc{
+    width: 50%;
+    height: 50%;
+    font-size: 2px;
+}
+.div__px{
+    width: 80px;
+    height: 80px;
+}
+.p-rem{
+    font-size: 7rem;
+}
+.p-em{
+    font-size: 7em;
+    border: 1px solid blue;
+    padding: var(--space);
+}
+:root{
+    --universal-color: #FF0000;
+    --space: 25px;
+}
+* {
+    color: var(--universal-color);
+}

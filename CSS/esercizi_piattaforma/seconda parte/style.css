@@ -6,10 +6,12 @@
     width: 50%;
     height: 50%;
     font-size: 2px;
+    border: 1px dotted #FF0000;
 }
 .div__px{
     width: 80px;
     height: 80px;
+    border: 1px solid forestgreen;
 }
 .p-rem{
     font-size: 7rem;

@@ -52,6 +52,16 @@
     color: purple;
 }
 
+.square {
+    background-color: darkorchid;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
 .footer {
     position: sticky;
     bottom: 0;

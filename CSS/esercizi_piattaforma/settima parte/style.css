@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: burlywood;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: brown;
+    text-align: center;
+    padding: 10px;
+}
+
+.navbar__logo {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 60px;
+}
+
+.navbar__menu a {
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.navbar__menu a:hover {
+    background-color: crimson;
+    color: white;
+}
+
+.container {
+    column-count: 3;
+    column-gap: 10px;
+    column-rule: 1px dotted black;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.pink {
+    color: pink;
+}
+
+.red {
+    color: red;
+}
+
+.purple {
+    color: purple;
+}

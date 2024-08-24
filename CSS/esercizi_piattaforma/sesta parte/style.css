@@ -1,0 +1,17 @@
+.first {
+    color: brown;
+    width: 600px;
+}
+
+img {
+    width: 100px;
+    height: auto;
+    float: left;
+    padding: 0px 10px 0px 0px;
+}
+
+.second {
+    color: brown;
+    width: 600px;
+    clear: both;
+}

@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container  {
+    display: grid;
+    background-color: black;
+    width: 100%;
+    padding: 2rem;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto 25rem;
+    gap: 1rem;
+    align-content: center;
+}
+
+.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9, .item10 {
+    width: 100%;
+    background-color: bisque;
+    border: 2px solid red;
+}

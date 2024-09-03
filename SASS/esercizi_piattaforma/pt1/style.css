@@ -1,0 +1,10 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container ul {
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

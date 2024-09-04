@@ -1,10 +1,21 @@
+@charset "UTF-8";
 .container {
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
-.container ul {
-  font-size: 20px;
+.container .menù {
+  font-size: 18px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2%;
+}
+.container .menù a {
+  text-decoration: none;
+  color: black;
+}
+.container .menù a:hover {
+  color: #ff0000;
 }
 
 /*# sourceMappingURL=style.css.map */

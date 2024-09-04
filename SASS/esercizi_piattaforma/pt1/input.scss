@@ -1,8 +1,18 @@
 .container {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    ul {
-        font-size: 20px;
+    .menù {
+        font-size: 18px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2%;
+        a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: #ff0000;
+            }
+        }
     }
 }

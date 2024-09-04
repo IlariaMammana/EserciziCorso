@@ -1,0 +1,21 @@
+@import 'variables';
+
+.container {
+    width: 100%;
+    .menù {
+        font-size: 18px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2%;
+        a {
+            text-decoration: none;
+            color: black;
+            font-family: $a-font; 
+            &:hover {
+                color: $hover-color;
+            }
+        }
+    }
+}

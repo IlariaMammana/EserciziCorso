@@ -1,0 +1,54 @@
+@import 'variables';
+@import 'colors';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.navbar {
+    width: 100%;
+    .menù {
+        font-size: 18px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        gap: 2%;
+        a {
+            text-decoration: none;
+            color: $font-color;
+            font-family: $a-font; 
+            &:hover {
+                color: $hover-color;
+            }
+        }
+    }
+}
+
+.nav-background {
+    background-color: $nav-color;
+}
+
+li:last-of-type {
+    @extend .nav-background;
+    border: 1px solid $border-color;
+}
+
+.wrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .container {
+    border: 1px solid $border-color;
+    padding: 5px;
+    }
+}
+
+.smaller {
+    width: $container-size / 3;
+}

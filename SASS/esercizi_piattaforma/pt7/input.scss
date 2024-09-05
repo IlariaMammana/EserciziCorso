@@ -1,0 +1,62 @@
+@import 'variables';
+@import 'colors';
+
+@function em($target , $context: $base-font-size) {
+    @return ($target / $context) * 1em;
+}
+
+@mixin nav-style ($background-color, $a-color, $hover-text) {
+    background-color: $background-color;
+    width: 100%;
+    .menù {
+        font-size: em(18px);
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        gap: 2%;    
+        a {
+            text-decoration: none;
+            font-family: $a-font;
+            color: $a-color;
+            &:hover {
+        color: $hover-text;
+            }
+        }    
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navlight {
+    @include nav-style($nav-color, $font-color, $hover-color)
+}
+
+.navdark {
+    @include nav-style($dark-background, $dark-font, $dark-hover)
+}
+
+.wrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .container {
+    border: 1px solid $border-color;
+    padding: 5px;
+    }
+}
+
+.smaller {
+    width: calc($container-size / 3);
+}
+
+.bigger {
+    width: $container-size;
+}

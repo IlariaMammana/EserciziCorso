@@ -1,0 +1,95 @@
+@import 'variables';
+@import 'colors';
+
+@function em($target , $context: $base-font-size) {
+    @return ($target / $context) * 1em;
+}
+
+@mixin hover-color-light($noHover: true) {
+    @if $noHover {
+      color: $font-color;
+} @else {
+      color: $hover-color;
+        }
+}
+
+@mixin hover-color-dark($noHover: true) {
+    @if $noHover {
+      color: $dark-font;
+} @else {
+      color: $dark-hover;
+        }
+}
+
+@mixin nav-style ($background-color) {
+    background-color: $background-color;
+    width: 100%;
+    .menù {
+        font-size: em(18px);
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        gap: 2%;    
+        a {
+            text-decoration: none;
+            font-family: $a-font;
+        }    
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navlight {
+    @include nav-style($nav-color);
+    a {
+        @include hover-color-light ($noHover: true);
+    &:hover {
+        @include hover-color-light($noHover: false);
+    }
+}
+}
+
+.navdark {
+    @include nav-style($dark-background);
+    a {
+        @include hover-color-dark ($noHover: true);
+    &:hover {
+        @include hover-color-dark($noHover: false);
+    }
+}
+}
+
+.wrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .container {
+    border: 1px solid $border-color;
+    padding: 5px;
+    }
+}
+
+.smaller {
+    width: calc($container-size / 3);
+}
+
+.bigger {
+    width: $container-size;
+}
+
+@for $i from 1 through 3 {
+    .lighter:nth-child(3n + #{$i}) {
+      background-color: lighten($base-color-light, $i * 10%);
+    }
+    .darker:nth-child(3n + #{$i}) {
+      background-color: darken($base-color-dark, $i * 10%);
+    }
+}

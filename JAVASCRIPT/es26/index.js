@@ -5,6 +5,6 @@ let student = {
     school: "Hogwarts",
 }
 
-Object.values(student)
+const values = Object.values(student)
 
-console.log(Object.values(student));
+console.log(Object.values(values));

@@ -1,10 +1,11 @@
-function outerFunction (x, initialValue) {
-  const result = initialValue;
-  function innerFunction (y) {
-    return x + y;
+function outerFunction(x, initialValue) {
+  let result = initialValue;
+  function innerFunction(y) {
+      result += y;
+      return result;
   }
   return innerFunction;
 }
 
-const addSix = outerFunction(6);
-console.log(addSix(10));
+const addToFour = outerFunction(2, 4);
+console.log(addToFour(8));

@@ -6,7 +6,5 @@ function outerFunction (x, initialValue) {
   return innerFunction;
 }
 
-const result = outerFunction(3)(4)
-
-console.log(result);
-
+const addSix = outerFunction(6);
+console.log(addSix(10));

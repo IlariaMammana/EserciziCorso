@@ -5,6 +5,4 @@ let student = {
     school: "Hogwarts",
 }
 
-const keys = Object.keys(student)
-
-console.log(Object.keys(keys));
+console.log(Object.keys(student));

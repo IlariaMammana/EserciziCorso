@@ -1,5 +1,7 @@
-let word= prompt('inserisci una parola')
+let word;
 
 do {
-    console.log(word);
-} while (prompt == 5);
+    word= prompt('inserisci una parola');
+} while (word < 5);
+
+console.log(word);

@@ -1,14 +1,14 @@
 class Automobile {
-  marca = ""
-  modello = ""
-  anno = ""
-
   constructor(marca, modello, anno) {
     this.marca = marca,
     this.modello = modello,
     this.anno = anno
   }
-  descrizione() {
-    return `Automobile: ${this.marca} ${this.modello}, Anno: ${this.anno}`
+  descrizione = (marca, modello, anno) => {
+    return `Automobile: ${this.marca} ${this.modello}, Anno: ${this.anno}`;
   }
 }
+
+const oldAuto = new Automobile("Chevrolet", "Impala", "1967");
+
+oldAuto.descrizione()

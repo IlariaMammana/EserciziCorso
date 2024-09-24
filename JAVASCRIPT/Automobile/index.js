@@ -9,6 +9,6 @@ class Automobile {
     this.anno = anno
   }
   descrizione() {
-    return "Automobile: {this.marca} {this.modello}, Anno: {this.anno}"
+    return `Automobile: ${this.marca} ${this.modello}, Anno: ${this.anno}`
   }
 }

@@ -7,7 +7,7 @@ class Automobile {
   }
 
   #calcolaEtà() {
-    const annoCorrente = new Date().getFullYear();
+    const annoCorrente = 2024; // come posso renderlo dinamico? //
         return annoCorrente - this.anno;
   }
 

@@ -30,7 +30,7 @@ class Camion extends Automobile{
 }
 
 const impala97 = new Automobile("Chevrolet", "Impala", 1967);
-const eurocargo09 = new Camion("Iveco", "Eurocargo", 2009, 0, 2800)
+const eurocargo09 = new Camion("Iveco", "Eurocargo", 2009, 2800)
 
 Automobile.verificaIstanza(impala97, Automobile)
 Automobile.verificaIstanza(eurocargo09, Automobile)

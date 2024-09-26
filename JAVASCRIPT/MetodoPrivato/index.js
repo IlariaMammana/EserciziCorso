@@ -9,7 +9,7 @@ class Automobile {
   #calcolaEtà() {
     const annoCorrente = new Date().getFullYear();
     // su internet ho trovato questo per rendere la data dinamica, ho sperimentato
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYearS
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear
         return annoCorrente - this.anno;
   }
 

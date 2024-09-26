@@ -8,6 +8,13 @@ class Automobile {
     this.chilometraggio = chilometraggio;
   }
 
+  _controllaChilometri() {
+    if (this.chilometraggio > 100000) {
+      return `Attenzione: il chilometraggio ha superato i 100.000 km!`;
+    }
+    return `Il chilometraggio è sotto controllo: ${this.chilometraggio}`;
+  }
+
   #incrementaContatore() {
     this.#contatoreChiamate++;
   }

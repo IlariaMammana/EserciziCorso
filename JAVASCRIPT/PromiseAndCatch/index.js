@@ -11,8 +11,10 @@ function stampaMessaggio(check) {
     });
 };
 
-stampaMessaggio(false).then((messaggio) => {
+stampaMessaggio(false)
+    .then((messaggio) => {
         console.log(messaggio);
-    }).catch((errore) => {
+    })
+    .catch((errore) => {
         console.error(errore);
     });

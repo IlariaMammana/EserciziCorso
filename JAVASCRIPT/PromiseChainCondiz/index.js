@@ -1,5 +1,5 @@
 function numAfterOneSec(check) {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         console.log("Verifica 1s");
         setTimeout(() => {
             if (check) {
@@ -26,5 +26,5 @@ numAfterOneSec(true)
         console.log(`Il risultato è ${result}`);
     })
     .catch((error) => {
-        console.error(error.message);
+        console.error(error);
     });

@@ -16,10 +16,10 @@ function getValue(key) {
 getValue("username");
 
 //Rimuovi
-function deleteValue(key) {
+function removeValue(key) {
     localStorage.removeItem(key);
     console.log(`Ho rimosso il valore: ${key}`);
 };
 
-deleteValue("username");
+removeValue("username");
 getValue("username");

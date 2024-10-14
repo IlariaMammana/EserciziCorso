@@ -15,7 +15,7 @@ saveCookie("nickname", "Aragog89", 10);
 // Recupero un cookie
 function getCookie(name) {
     const cName = name + "=";
-    const ca = document.cookie.split(';'); // Cookies totali
+    const ca = document.cookie.split(';'); // Cookies
     for (let i = 0; i < ca.length; i++) {
         let c = ca[i];
         if (c.indexOf(cName) == 0) {

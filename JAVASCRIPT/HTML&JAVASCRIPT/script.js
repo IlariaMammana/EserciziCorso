@@ -1,22 +1,22 @@
 const $theParagraph = document.querySelector("#the-paragraph");
 
-$theParagraph.innerText = "Changed Text ";
+$theParagraph.innerText = "Changed Text "; // ES. Modifica il testo di un paragrafo
 
-$theParagraph.style.backgroundColor = "pink";
+$theParagraph.style.backgroundColor = "pink"; // ES. Cambia lo stile
 $theParagraph.style.fontSize = "18px";
 
-$theParagraph.innerHTML += '<button id="the-btn">Click Here</button>';
+$theParagraph.innerHTML += '<button id="the-btn">Click Here</button>'; // ES. Modifica l'html
 
-const ul = document.createElement("ul");
+const ul = document.createElement("ul"); // ES. Crea una lista
 
 for (let i = 1; i <= 5; i++) {
-    const li = document.createElement('li');
+    const li = document.createElement('li'); // ES. Crea i list items
     li.innerText = i;
     ul.appendChild(li);
 }
 document.body.appendChild(ul);
 
-const form = document.createElement('form');
+const form = document.createElement('form'); //ES. Submit
 form.id = 'the-form';
 
 const nomeInput = document.createElement('input');

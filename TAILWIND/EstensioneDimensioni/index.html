@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    spacing: {
+                        '72': '7rem',  
+                        '84': '8rem',  
+                        '96': '10rem', 
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 p-4">
+    <div class="max-w-md mx-auto bg-white p-6">
+        <h1 class="text-2xl font-bold mb-4">Ciao sono un titolo</h1>
+        <p class="mb-6">ciao sono un sottotitolo</p>
+        <div class="mb-72 bg-blue-500 p-84 text-white">
+            <p>ho utilizzato lo spacing impostato</p>
+        </div>
+        <div class="mt-96 bg-red-500 text-white p-4">
+            <p>oops l'ho fatto di nuovo per distanziarmi</p>
+        </div>
+    </div>
+</body>
+
+</html>

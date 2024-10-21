@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F7819F',
+                        secondary: '#F6CED8',
+                        detail: '#FF4000',
+                        light: '#BDBDBD',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100">
+
+    <header class="py-10 text-center bg-white">
+        <h1 class="text-4xl font-bold text-primary">Hello World!</h1>
+        <p class="text-light mt-2">please take a sit</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-5">
+        <section class="my-5">
+            <h2 class="text-3xl font-semibold text-secondary">About Us</h2>
+            <p class="text-gray-700 mt-2">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aspernatur tempora, distinctio quod
+                vero at aut dolor assumenda est odio! Doloremque quod consectetur nobis unde dolorum tempore labore
+                itaque in?
+            </p>
+        </section>
+
+        <section class="my-5">
+            <h2 class="text-3xl font-semibold text-secondary">Contact Us</h2>
+            <p class="text-gray-700 mt-2">
+                Do you need more infos?
+                Contact us on <a href="" class="text-detail underline">info@esempio.com</a>.
+            </p>
+        </section>
+    </main>
+
+    <footer class="py-5 bg-white text-center">
+        <p class="text-light">© 2023 Jordans.</p>
+    </footer>
+
+</body>
+
+</html>

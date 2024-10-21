@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    spacing: {
+                        '72': '7rem',
+                        '84': '8rem',
+                        '96': '10rem',
+                    },
+                    colors: {
+                        primary: '#227226',
+                        secondary: '#1B1C1B',
+                        decoration: '#431C1C'
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-secondary p-4">
+    <div class="max-w-md mx-auto bg-primary p-6 text-secondary">
+        <h1 class="text-2xl font-bold mb-4">Ciao sono un titolo</h1>
+        <p class="mb-6">ciao sono un sottotitolo</p>
+        <div class="mb-72 bg-secondary p-84 text-primary border-decoration">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt necessitatibus, eaque obcaecati repudiandae at.</p>
+        </div>
+        <div class="mt-96 bg-primary text-secondary p-4">
+            <p>explicabo cumque aliquid quisquam facere cupiditate, delectus rem corrupti tenetur iure id mollitia nostrum eum molestiae.</p>
+        </div>
+    </div>
+</body>
+
+</html>

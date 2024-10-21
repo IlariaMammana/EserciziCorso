@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        custom1: '#5F04B4',
+                        custom2: '#6A0888',
+                        custom3:  '#8A0886',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-secondary p-4">
+    <button class="bg-custom1 hover:bg-custom2 p-5 text-white">
+        Pulsante 1</button>
+    <button class="bg-custom2 hover:bg-custom3 p-5 text-white">
+        Pulsante 2</button>
+    <button class="bg-custom3 hover:bg-custom1 p-5 text-white">
+        Pulsante3</button>
+</body>
+
+</html>

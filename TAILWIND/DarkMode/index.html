@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FAFAFA',
+                        secondary: '#FA5858',
+                        links: '#DF0101',
+                        primaryDark: '#1C1C1C',
+                        secondaryDark: '#E6E6E6',
+                        linksDark: '#868A08',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body>
+    <div class="bg-gray-200 dark:bg-black h-auto">
+        <div class="p-4 text-right bg-primary dark:bg-primaryDark">
+            <button id="darkModeToggle"
+                class="border px-4 py-1 bg-secondary text-primary dark:bg-secondaryDark dark:text-primaryDark">
+                Dark Mode: <span id="darkModeStatus">Inactive</span>
+            </button>
+        </div>
+        <header class="py-10 text-center bg-primary dark:bg-primaryDark">
+            <h1 class="text-4xl font-bold text-secondary dark:text-secondaryDark">Hello World!</h1>
+            <p class="text-secondary dark:text-secondaryDark mt-2">please take a sit</p>
+        </header>
+
+        <main class="max-w-4xl mx-auto p-5">
+            <section class="my-5 bg-secondary dark:bg-primaryDark p-5">
+                <h2 class="text-3xl font-semibold text-primary dark:text-secondaryDark">About Us</h2>
+                <p class="text-primary dark:text-secondaryDark mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aspernatur tempora, distinctio
+                    quod
+                    vero at aut dolor assumenda est odio! Doloremque quod consectetur nobis unde dolorum tempore labore
+                    itaque in?
+                </p>
+            </section>
+
+            <section class="my-5 bg-primary dark:bg-primaryDark p-5">
+                <h2 class="text-3xl font-semibold text-secondary dark:text-secondaryDark">Contact Us</h2>
+                <p class="text-secondary dark:text-secondaryDark mt-2">
+                    Do you need more infos?
+                    Contact us on <a href="" class="text-links dark:text-linksDark underline">info@esempio.com</a>.
+                </p>
+            </section>
+        </main>
+
+        <footer class="py-5 bg-primary dark:bg-primaryDark text-center">
+            <p class="text-secondary dark:text-secondaryDark">© 2023 Jordans.</p>
+        </footer>
+    </div>
+
+</body>
+<script src="./script.js"></script>
+
+</html>

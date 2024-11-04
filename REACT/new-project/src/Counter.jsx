@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 const Counter = () => {
     const [counter, setCounter] = useState(0);
@@ -14,6 +14,10 @@ const Counter = () => {
     const resetCounter = () => {
         setCounter(0)
     }
+
+    useEffect(() => {
+        document.title = `Counter: ${counter}`;
+    }, [counter])
 
    return (
     <>

@@ -9,9 +9,12 @@ const App = () => {
     <>
       <HelloWorld />
       <Greatings nomeUtente={"Marco"} età={18}/>
+      <br />
       <Counter />
       <br />
+      <br />
       <TextInput />
+      <br />
     </>
   )
 }

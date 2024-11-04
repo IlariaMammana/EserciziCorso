@@ -2,6 +2,7 @@ import HelloWorld from './HelloWorld'
 import Greatings from './Greatings'
 import Counter from './Counter'
 import TextInput from './TextInput'
+import LoginForm from './LoginForm'
 
 const App = () => {
 
@@ -15,6 +16,7 @@ const App = () => {
       <br />
       <TextInput />
       <br />
+      <LoginForm />
     </>
   )
 }

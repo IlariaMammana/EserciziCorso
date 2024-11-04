@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HelloWorld from './HelloWorld'
 import Greatings from './Greatings'
+import Counter from './Counter'
 
 const App = () => {
 
@@ -8,6 +9,7 @@ const App = () => {
     <>
       <HelloWorld />
       <Greatings nomeUtente={"Marco"} età={18}/>
+      <Counter />
     </>
   )
 }

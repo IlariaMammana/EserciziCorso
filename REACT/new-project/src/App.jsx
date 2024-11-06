@@ -5,6 +5,7 @@ import TextInput from './TextInput'
 import LoginForm from './LoginForm'
 import ItemList from './ItemList'
 import Card from './Card'
+import UncontrolledInput from './UncontrolledInput'
 
 const App = () => {
   const items = ["item 1", "item 2", "item 3"];
@@ -21,6 +22,8 @@ const App = () => {
       <br />
       <LoginForm />
       <br /> 
+      <UncontrolledInput />
+      <br/>
       <ItemList items={items} />
       <br />
       <Card>

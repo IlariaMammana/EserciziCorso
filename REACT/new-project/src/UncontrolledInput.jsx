@@ -1,21 +1,19 @@
+import { useRef } from "react";
+
 const UncontrolledInput = () => {
+    const inputRef = useRef(null);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-      };
+    const handleButtonClick = () => {
+        alert(`${inputRef.current.value}`);
+    }
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Inserisci qualcosa:
-                    <input type="text" />
-                </label>
-                <button type="submit">Invia</button>
-            </form>
+            <input
+                type="text" ref={inputRef} placeholder="Inserisci del testo..."/>
+            <button onClick={handleButtonClick}>Mostra Valore Corrente</button>
         </>
-    )
-}
+    );
+};
 
 export default UncontrolledInput;

@@ -1,12 +1,11 @@
-import { useCallback, useMemo, useState } from "react";
-import { useFetch } from "../hooks/useFetch";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useTodos } from "../provider/ToDoContext";
 /* import { useFilteredTodos } from "../hooks/useFilteredTodos"; */
 
-const API_URL = "https://jsonplaceholder.typicode.com/todos";
-
 const ToDoList = () => {
-    const { data: todos, error, loading } = useFetch(API_URL, { method: "GET" });
+    const { todos, error, loading } = useTodos();
     const [searchTerm, setSearchTerm] = useState('');
+    const inputRef = useRef(null);
     /* const filteredTodos = useFilteredTodos(todos || [], searchTerm); */
 
     const filteredTodos = useMemo(() => {
@@ -22,6 +21,11 @@ const ToDoList = () => {
         setSearchTerm(e.target.value);
     }, []);
 
+    useEffect(() => {
+        if (inputRef.current)
+            inputRef.current.focus()
+    }, [])
+
     if (loading) {
         return <div>Caricamento...</div>;
     }
@@ -33,7 +37,7 @@ const ToDoList = () => {
     return (
         <>
             <div>
-                <input type="text" placeholder="Filter todos..." value={searchTerm} onChange={handleSearchChange}/>
+                <input type="text" placeholder="Filter todos..." value={searchTerm} onChange={handleSearchChange} ref={inputRef} />
             </div>
             <table>
                 <thead>

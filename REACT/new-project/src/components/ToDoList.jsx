@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTodos } from "../provider/ToDoContext";
+import { Link, useSearchParams } from "react-router-dom";
 /* import { useFilteredTodos } from "../hooks/useFilteredTodos"; */
 
 const ToDoList = () => {
     const { todos, error, loading } = useTodos();
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchParams, setSearchParams] = useSearchParams();
+    const searchTerm = searchParams.get('search') || '';
     const inputRef = useRef(null);
     /* const filteredTodos = useFilteredTodos(todos || [], searchTerm); */
 
@@ -18,8 +20,9 @@ const ToDoList = () => {
     }, [todos, searchTerm]);
 
     const handleSearchChange = useCallback((e) => {
-        setSearchTerm(e.target.value);
-    }, []);
+        const value = e.target.value;
+        setSearchParams({ search: value });
+    }, [setSearchParams]);
 
     useEffect(() => {
         if (inputRef.current)
@@ -46,6 +49,7 @@ const ToDoList = () => {
                         <th>Id</th>
                         <th>Title</th>
                         <th>Completed</th>
+                        <th>Dettagli</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,6 +60,9 @@ const ToDoList = () => {
                                 <td>{todo.id}</td>
                                 <td>{todo.title}</td>
                                 <td>{todo.completed ? '(completato)' : '(non completato)'}</td>
+                                <td>
+                                    <Link to={`tododetails/${todo.id}`}>Dettagli</Link>
+                                </td>
                             </tr>
                         ))
                     }

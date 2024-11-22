@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 
 import PublicLayout from './layouts/PublicLayout'
+import ToDoDetails from './pages/ToDoDetails'
 
 const App = () => {
     return (
@@ -12,6 +13,7 @@ const App = () => {
                 <Route path='/' element={<PublicLayout />}>
                     <Route path="" element={<Home />} />
                     <Route path="about" element={<About />} />
+                    <Route path="tododetails/:id" element={<ToDoDetails />} />
                 </Route>
             </Routes>
         </>

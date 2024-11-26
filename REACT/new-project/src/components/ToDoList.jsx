@@ -1,10 +1,17 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTodos } from "../provider/ToDoContext";
 import { Link, useSearchParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchTodosError, fetchTodosLoading, fetchTodosSuccess } from "../store/slices/toDoSlice";
+
 /* import { useFilteredTodos } from "../hooks/useFilteredTodos"; */
 
+const API_URL = "https://jsonplaceholder.typicode.com/todos";
+
 const ToDoList = () => {
-    const { todos, error, loading } = useTodos();
+    const dispatch = useDispatch();
+    const { todos, error, loading } = useSelector((state) => state.todos);
+    /* const { todos, error, loading } = useTodos(); */
     const [searchParams, setSearchParams] = useSearchParams();
     const searchTerm = searchParams.get('search') || '';
     const inputRef = useRef(null);
@@ -25,6 +32,35 @@ const ToDoList = () => {
     }, [setSearchParams]);
 
     useEffect(() => {
+        const fetchTodos = async () => {
+            dispatch(fetchTodosLoading());
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) {
+                    throw new Error('Error during fetch data.');
+                }
+                const result = await response.json();
+                dispatch(fetchTodosSuccess(result));
+            } catch (err) {
+                dispatch(fetchTodosError(err.message));
+            }
+        };
+
+        fetchTodos();
+
+        if (inputRef.current)
+            inputRef.current.focus();
+    }, [dispatch]);
+
+    if (loading) {
+        return <div>Caricamento...</div>;
+    }
+
+    if (error) {
+        return <div>Errore: {error}</div>;
+    }
+
+    /* useEffect(() => {
         if (inputRef.current)
             inputRef.current.focus()
     }, [])
@@ -35,7 +71,8 @@ const ToDoList = () => {
 
     if (error) {
         return <div>Errore: {error}</div>;
-    }
+    } */
+
 
     return (
         <>

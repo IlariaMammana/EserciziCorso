@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useTodos } from "../provider/ToDoContext";
 import { Link, useSearchParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchTodosError, fetchTodosLoading, fetchTodosSuccess } from "../store/slices/toDoSlice";
+import { fetchTodosError, fetchTodosLoading, fetchTodosSuccess, completedTodos } from "../store/slices/toDoSlice";
 
 /* import { useFilteredTodos } from "../hooks/useFilteredTodos"; */
 
@@ -30,6 +30,10 @@ const ToDoList = () => {
         const value = e.target.value;
         setSearchParams({ search: value });
     }, [setSearchParams]);
+
+    const handleComplete = (id) => {
+       console.log(completedTodos(id))
+    }
 
     useEffect(() => {
         const fetchTodos = async () => {
@@ -96,7 +100,7 @@ const ToDoList = () => {
                                 <td>{todo.userId}</td>
                                 <td>{todo.id}</td>
                                 <td>{todo.title}</td>
-                                <td>{todo.completed ? '(completato)' : '(non completato)'}</td>
+                                <td>{todo.completed ? '(completato)' : '(non completato)'} <button onClick={() => handleComplete(todo.id)}>Complete</button></td>
                                 <td>
                                     <Link to={`tododetails/${todo.id}`}>Dettagli</Link>
                                 </td>

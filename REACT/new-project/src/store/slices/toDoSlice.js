@@ -20,9 +20,19 @@ const toDoSlice = createSlice({
             state.loading = false;
             state.error = action.payload;
         },
+        completedTodos(state, action) {
+            const todoId = action.payload
+            const newTodos = state.todos.map((i) => {
+                if (i.id == todoId) {
+                    return {...i, completed: true} 
+                } else {
+                    return i
+                }
+            })
+        }
     },
 });
 
-export const { fetchTodosLoading, fetchTodosSuccess, fetchTodosError } = toDoSlice.actions;
+export const { fetchTodosLoading, fetchTodosSuccess, fetchTodosError, completedTodos } = toDoSlice.actions;
 
 export default toDoSlice.reducer;

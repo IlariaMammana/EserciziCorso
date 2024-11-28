@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useTodos } from "../provider/ToDoContext";
+/* import { useTodos } from "../provider/ToDoContext"; */
 import { Link, useSearchParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchTodosError, fetchTodosLoading, fetchTodosSuccess, completedTodos } from "../store/slices/toDoSlice";
+import { completeTodo, fetchTodosError, fetchTodosLoading, fetchTodosSuccess } from "../store/slices/todoSlice";
 
 /* import { useFilteredTodos } from "../hooks/useFilteredTodos"; */
 
@@ -32,7 +32,7 @@ const ToDoList = () => {
     }, [setSearchParams]);
 
     const handleComplete = (id) => {
-       console.log(completedTodos(id))
+        dispatch(completeTodo(id))
     }
 
     useEffect(() => {
@@ -100,7 +100,8 @@ const ToDoList = () => {
                                 <td>{todo.userId}</td>
                                 <td>{todo.id}</td>
                                 <td>{todo.title}</td>
-                                <td>{todo.completed ? '(completato)' : '(non completato)'} <button onClick={() => handleComplete(todo.id)}>Complete</button></td>
+                                <td>{todo.completed ? '(completato)' : '(non completato)'}
+                                    <button onClick={() => handleComplete(todo.id)} disabled={todo.completed}>Complete</button></td>
                                 <td>
                                     <Link to={`tododetails/${todo.id}`}>Dettagli</Link>
                                 </td>

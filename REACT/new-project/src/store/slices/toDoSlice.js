@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const toDoSlice = createSlice({
+const todoSlice = createSlice({
     name: "todos",
     initialState: {
         todos: [],
@@ -20,19 +20,15 @@ const toDoSlice = createSlice({
             state.loading = false;
             state.error = action.payload;
         },
-        completedTodos(state, action) {
-            const todoId = action.payload
-            const newTodos = state.todos.map((i) => {
-                if (i.id == todoId) {
-                    return {...i, completed: true} 
-                } else {
-                    return i
-                }
-            })
+        completeTodo(state, action){
+            const todo = state.todos.find(item => item.id === action.payload)
+            const index = state.todos.indexOf(todo)
+            todo.completed = true
+            state.todos[index] = todo
         }
     },
 });
 
-export const { fetchTodosLoading, fetchTodosSuccess, fetchTodosError, completedTodos } = toDoSlice.actions;
+export const { fetchTodosLoading, fetchTodosSuccess, fetchTodosError, completeTodo } = todoSlice.actions;
 
-export default toDoSlice.reducer;
+export default todoSlice.reducer;

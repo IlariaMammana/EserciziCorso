@@ -19,9 +19,14 @@ const assignTodoToUser = (todoId, userId) => {
     }
     return null;
 };
+const getUserTodos = (userId) => {
+    return todos.filter(todo => todo.userId === userId);
+};
 const newTodo = addTodo("Pagare Affitto");
-console.log(newTodo);
-console.log(todos);
+/* console.log(newTodo);
+console.log(todos); */
 const assignedTodo = assignTodoToUser(1, 104);
-console.log(assignedTodo);
-console.log(todos);
+/* console.log(assignedTodo);
+console.log(todos); */
+const userTodos = getUserTodos(104);
+console.log(userTodos);

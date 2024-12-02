@@ -1,10 +1,9 @@
-import { Todo, User } from "./types";
-
-const todos: Todo[] = [];
-const users: User[] = []
-
-const addTodo = (title: string) => {
-    const newTodo: Todo = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const todos = [];
+const users = [];
+const addTodo = (title) => {
+    const newTodo = {
         id: todos.length + 1,
         title: title,
         completed: false
@@ -12,8 +11,7 @@ const addTodo = (title: string) => {
     todos.push(newTodo);
     return newTodo;
 };
-
-const assignTodoToUser = (todoId: number, userId: number): Todo | null => {
+const assignTodoToUser = (todoId, userId) => {
     const todo = todos.find(t => t.id === todoId);
     if (todo) {
         todo.userId = userId;
@@ -21,12 +19,9 @@ const assignTodoToUser = (todoId: number, userId: number): Todo | null => {
     }
     return null;
 };
-
 const newTodo = addTodo("Pagare Affitto");
 console.log(newTodo);
 console.log(todos);
-
 const assignedTodo = assignTodoToUser(1, 104);
 console.log(assignedTodo);
 console.log(todos);
-

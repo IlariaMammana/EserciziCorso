@@ -7,7 +7,8 @@ const addTodo = (title: string) => {
     const newTodo: Todo = {
         id: todos.length + 1,
         title: title,
-        completed: false
+        completed: false,
+        metadata: "metadata",
     };
     todos.push(newTodo);
     return newTodo;
@@ -26,6 +27,20 @@ const getUserTodos = (userId: number): Todo[] => {
     return todos.filter(todo => todo.userId === userId);
 };
 
+const findError = (message: string): never => {
+    throw new Error(message);
+}
+
+const parseInput = (input: unknown) => {
+    if (typeof input === 'string') {
+        return input;
+    } else if (typeof input === 'number') {
+        return input.toString();
+    } else {
+        findError('Input deve essere una stringa o un numero');
+    }
+}
+
 const newTodo = addTodo("Pagare Affitto");
 /* console.log(newTodo);
 console.log(todos); */
@@ -36,4 +51,3 @@ console.log(todos); */
 
 const userTodos = getUserTodos(104);
 console.log(userTodos);
-

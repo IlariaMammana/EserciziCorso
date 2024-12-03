@@ -7,7 +7,7 @@ const addTodo = (title) => {
         id: todos.length + 1,
         title: title,
         completed: false,
-        metadata: "ciao",
+        metadata: "metadata",
     };
     todos.push(newTodo);
     return newTodo;

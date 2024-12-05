@@ -1,7 +1,8 @@
-import { Todo, User } from "./types";
+import { Project, Todo, User } from "./types";
 
 const todos: Todo[] = [];
-const users: User[] = []
+const users: User[] = [];
+const projects: Project[] = [];
 
 const addTodo = (title: string, metadata?: string|{} ) => {
     const newTodo: Todo = {
@@ -40,6 +41,30 @@ const parseInput = (input: unknown) => {
     }
 }
 
+const updateTodo = (todoId: number, updates: Partial<Todo>): Todo | null => {
+    const todoIndex = todos.findIndex(t => t.id === todoId);
+    if (todoIndex !== -1) {
+        todos[todoIndex] = { ...todos[todoIndex], ...updates };
+        return todos[todoIndex];
+    }
+    return null;
+};
+
+const getTodoSummary = (todo: Todo): [string, boolean] => {
+    return [todo.title, todo.completed];
+};
+
+const createProject = ( name: string, userIds: number[], todoTitles: string[]): Project => {
+    const newProject : Project = {
+        id: projects.length +1,
+        name: name,
+        users: users.filter(user => userIds.includes(user.id)),
+        todos: todos.filter(todo => todoTitles.includes(todo.title))
+    }
+    projects.push(newProject);
+    return newProject
+}
+
 const newTodo = addTodo("Pagare Affitto");
 /* console.log(newTodo);
 console.log(todos); */
@@ -50,3 +75,7 @@ console.log(todos); */
 
 const userTodos = getUserTodos(104);
 console.log(userTodos);
+
+
+const updatedTodo = updateTodo(1, { completed: true, title: "Pagare Affitto Aggiornato" });
+console.log(updatedTodo);

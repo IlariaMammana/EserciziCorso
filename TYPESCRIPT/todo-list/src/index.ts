@@ -1,8 +1,25 @@
-import { Project, Todo, TodoStatus, User } from "./types";
+import { Project, Todo, TodoStatus } from "./types";
+import { User } from "./User";
+
 
 const todos: Todo[] = [];
 const users: User[] = [];
 const projects: Project[] = [];
+
+// Instanze User
+const user1 = new User();
+    user1.id = 0;
+    user1.name = "Moira"
+
+const user2 = new User();
+    user2.id = 1;
+    user2.name = "Marco"
+
+const user3 = new User();
+    user3.id = 2;
+    user3.name = "Costanza"
+
+
 
 const addTodo = (title: string, metadata?: string|{} ) => {
     const newTodo: Todo = {
@@ -17,8 +34,10 @@ const addTodo = (title: string, metadata?: string|{} ) => {
 
 const assignTodoToUser = (todoId: number, userId: number): Todo | null => {
     const todo = todos.find(t => t.id === todoId);
-    if (todo) {
+    const user = users.find(u => u.id === userId);
+    if (todo && user) {
         todo.userId = userId;
+        user.addTodo(todo)
         return todo;
     }
     return null;
@@ -55,7 +74,7 @@ const getTodoSummary = (todo: Todo): [string, boolean] => {
     return [todo.title, todo.completed];
 };
 
-const createProject = ( name: string, userIds: number[], todoTitles: string[]): Project => {
+/* const createProject = ( name: string, userIds: number[], todoTitles: string[]): Project => {
     const newProject : Project = {
         id: projects.length +1,
         name: name,
@@ -64,7 +83,7 @@ const createProject = ( name: string, userIds: number[], todoTitles: string[]): 
     }
     projects.push(newProject);
     return newProject
-}
+} */
 
 const updateTodoStatus = (todoId: number, status: TodoStatus): Todo | null => {
     const todoIndex = todos.findIndex(t => t.id === todoId);

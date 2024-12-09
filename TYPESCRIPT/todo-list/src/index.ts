@@ -1,4 +1,4 @@
-import { Project, Todo, User } from "./types";
+import { Project, Todo, TodoStatus, User } from "./types";
 
 const todos: Todo[] = [];
 const users: User[] = [];
@@ -9,6 +9,7 @@ const addTodo = (title: string, metadata?: string|{} ) => {
         id: todos.length + 1,
         title: title,
         completed: false,
+        status: TodoStatus.Pending
     };
     todos.push(newTodo);
     return newTodo;
@@ -64,6 +65,19 @@ const createProject = ( name: string, userIds: number[], todoTitles: string[]): 
     projects.push(newProject);
     return newProject
 }
+
+const updateTodoStatus = (todoId: number, status: TodoStatus): Todo | null => {
+    const todoIndex = todos.findIndex(t => t.id === todoId);
+    if (todoIndex !== -1) {
+        todos[todoIndex].status = status;
+        return todos[todoIndex];
+    }
+    return null;
+};
+
+// Esempio di utilizzo:
+const updatedStatusTodo = updateTodoStatus(1, TodoStatus.Completed);
+console.log(updatedStatusTodo);
 
 const newTodo = addTodo("Pagare Affitto");
 /* console.log(newTodo);

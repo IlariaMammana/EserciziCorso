@@ -4,7 +4,7 @@ export interface Todo {
     completed: boolean,
     userId?: number,
     /* metadata?: any, */
-    status: TodoStatus,
+    status?: TodoStatus,
 }
 
 export interface TodoWithMetadata extends Todo {

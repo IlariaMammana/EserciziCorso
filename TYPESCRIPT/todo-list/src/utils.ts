@@ -20,13 +20,21 @@ type PartialTodo = {
     [P in keyof Todo]?: Todo[P];
 };
 
-function updatePartialTodo(todoId: number, partialTodo: PartialTodo) {
+const updatePartialTodo = (todoId: number, partialTodo: PartialTodo) => {
     const todoIndex = todos.findIndex(todo => todo.id === todoId);
     if (todoIndex >= 1) {
         const updatedTodo = { ...todos[todoIndex], ...partialTodo };
         todos[todoIndex] = updatedTodo;
         return updatedTodo;
     }
+}
+
+type TodoRecord = {
+    [id: number]: Todo;
+}
+
+const convertArrayToRecord = (todos: Todo[]) => {
+    return 
 }
 
 filterTodos(todos, filterFunction)

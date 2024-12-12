@@ -16,5 +16,19 @@ const filterFunction = (items: Todo[]) => {
     return items.filter(item => item.completed == true)
 }
 
+type PartialTodo = {
+    [P in keyof Todo]?: Todo[P];
+};
+
+function updatePartialTodo(todoId: number, partialTodo: PartialTodo) {
+    const todoIndex = todos.findIndex(todo => todo.id === todoId);
+    if (todoIndex >= 1) {
+        const updatedTodo = { ...todos[todoIndex], ...partialTodo };
+        todos[todoIndex] = updatedTodo;
+        return updatedTodo;
+    }
+}
 
 filterTodos(todos, filterFunction)
+const updated = updatePartialTodo(3, { completed: true, title: "Creare un'applicazione React" });
+console.log(updated);

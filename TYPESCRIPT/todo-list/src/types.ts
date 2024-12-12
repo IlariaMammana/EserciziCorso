@@ -7,7 +7,7 @@ export interface Todo {
     status?: TodoStatus,
 }
 
-export interface TodoWithMetadata extends Todo {
+/* export interface TodoWithMetadata extends Todo {
     metadata: string|{},
 }
 
@@ -23,7 +23,7 @@ export interface Project {
     name: string;
     users: User[];
     todos: Todo[];
-}
+} */
 
 export enum TodoStatus {
     Pending,

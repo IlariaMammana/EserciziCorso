@@ -29,14 +29,25 @@ const updatePartialTodo = (todoId: number, partialTodo: PartialTodo) => {
     }
 }
 
+filterTodos(todos, filterFunction)
+const updated = updatePartialTodo(3, { completed: true, title: "Creare un'applicazione React" });
+console.log(updated);
+
 type TodoRecord = {
     [id: number]: Todo;
 }
 
-const convertArrayToRecord = (todos: Todo[]) => {
-    return 
+const convertArrayToRecord = (todos: Todo[]): TodoRecord => {
+    return todos.reduce<TodoRecord>((record, todo) => {
+        record[todo.id] = todo;
+        return record;
+    }, {});
 }
 
-filterTodos(todos, filterFunction)
-const updated = updatePartialTodo(3, { completed: true, title: "Creare un'applicazione React" });
-console.log(updated);
+const todosRecord: TodoRecord = convertArrayToRecord(todos);
+
+console.log(todosRecord);
+
+
+
+
